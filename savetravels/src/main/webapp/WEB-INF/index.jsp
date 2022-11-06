@@ -19,6 +19,7 @@
 				<th scope="col">Expense</th>
 				<th scope="col">Vendor</th>
 				<th scope="col">Amount</th>
+				<th scope="col">Actions</th>
 			</tr>
 		</thead>
 		<c:forEach var="expense" items="${expenses}">
@@ -26,6 +27,7 @@
 				<td><c:out value="${expense.name}"/></td>
 				<td><c:out value="${expense.vendor}"/></td>
 				<td><c:out value="${expense.amount}"/>$</td>
+				<td><a href="/expenses/edit/<c:out value="${expense.id}"/>">edit</a></td>
 			</tr>
 		</c:forEach>
 	</table>

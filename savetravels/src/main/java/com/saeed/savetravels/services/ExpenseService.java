@@ -1,6 +1,7 @@
 package com.saeed.savetravels.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -20,4 +21,18 @@ public class ExpenseService {
 	public Expense createExpense(Expense e) {
         return expenseRepository.save(e);
     }
+	public Expense findExpense(Long id) {
+        Optional<Expense> optionalExpense = expenseRepository.findById(id);
+        if(optionalExpense.isPresent()) {
+            return optionalExpense.get();
+        } else {
+            return null;
+        }
+    }
+	public Expense updateExpense(Expense expense) {
+   		return expenseRepository.save(expense);
+   }
+	public void deleteExpense(Long id) {
+	   expenseRepository.deleteById(id);        
+   }
 }
