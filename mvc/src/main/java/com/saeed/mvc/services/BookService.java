@@ -29,20 +29,23 @@ private final BookRepository bookRepository;
             return null;
         }
     }
-    public Book updateBook(Long id, String title, String desc,
-    		String lang, Integer numOfPages) {
-    	Optional<Book> optionalBook = bookRepository.findById(id);
-    	if(optionalBook.isPresent()) {
-    		Book book = optionalBook.get();
-    		book.setTitle(title);
-    		book.setDescription(desc);
-    		book.setLanguage(lang);
-    		book.setNumberOfPages(numOfPages);
+//    public Book updateBook(Long id, String title, String desc,
+//    		String lang, Integer numOfPages) {
+//    	Optional<Book> optionalBook = bookRepository.findById(id);
+//    	if(optionalBook.isPresent()) {
+//    		Book book = optionalBook.get();
+//    		book.setTitle(title);
+//    		book.setDescription(desc);
+//    		book.setLanguage(lang);
+//    		book.setNumberOfPages(numOfPages);
+//    		return bookRepository.save(book);
+//    	}
+//    	else {
+//    		return null;
+//    	}
+//    }
+    public Book updateBook(Book book) {
     		return bookRepository.save(book);
-    	}
-    	else {
-    		return null;
-    	}
     }
     public void deleteBook(Long id) {
         bookRepository.deleteById(id);        
