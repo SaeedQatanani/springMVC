@@ -7,13 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login and Registration</title>
+<title>Book Share</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 	<main class="container">
 		<h1><c:out value="${book.title}"/></h1>
-		<h4><a href="/books">back to shelves</a></h4>
+		<h4><a href="/shelves">back to shelves</a></h4>
 		<h4></h4>
 		<h4><c:out value="${book.author}"/></h4>
 		<h4><c:out value="${book.thoughts}"/></h4>

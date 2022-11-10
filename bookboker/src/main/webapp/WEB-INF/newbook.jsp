@@ -7,14 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login and Registration</title>
+<title>Book Share</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 </head>
 <body class="container">
-	<h1>Edit Book</h1>
-	<h4><a href="/books">back to shelves</a></h4>
-	<form:form action="/books/${book.id}" method="post" modelAttribute="book">
-	    <input type="hidden" name="_method" value="put">
+	<h1>Add a book to your shelf!</h1>
+	<h4><a href="/shelves">back to shelves</a></h4>
+	<form:form action="/books/new" method="post" modelAttribute="book">
 		<form:input type="hidden" path="user" value="${user.id}"/>
 		<p class="error" style="color: red;"><form:errors path="title"/></p>
 		<p class="error" style="color: red;"><form:errors path="author"/></p>
@@ -33,9 +32,5 @@
 	    </p>   
 	    <input type="submit" value="Submit" class="btn btn-primary"/>
 	</form:form>
-	<form action="/books/${book.id}" method="post">
-	    		<input type="hidden" name="_method" value="delete">
-	    		<input type="submit" value="Delete" class="btn btn-outline-danger">
-	</form>
 </body>
 </html>

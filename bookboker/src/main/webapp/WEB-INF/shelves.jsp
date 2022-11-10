@@ -7,13 +7,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login and Registration</title>
+<title>Read Share</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
    <main class="container">
 		<h1>Welcome, <c:out value="${currentUser.userName}"/> !</h1>
 		<h4><a href="/logout">logout</a></h4>
+		<h4><a href="/bookmarket">Book Market</a></h4>
 		<h4><a href="/books/new">+ Add a book to my shelf!</a></h4>
 		<h4>Books from everyone's shelves:</h4>
 		<table class="table">
