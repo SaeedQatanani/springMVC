@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -35,6 +36,7 @@ public class Project {
     private String description;
     @NotNull
     @DateTimeFormat(pattern="yyyy-MM-dd")
+    @FutureOrPresent(message="A project should be planned in the future!!")
     private Date dueDate;
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
