@@ -119,13 +119,15 @@ public class HomeController {
 	 @GetMapping("/projects/{id}/edit")
 	    public String edit(@PathVariable("id") Long id, Model model, HttpSession session) {
 			Project project = projectServ.findProjectById(id);
-		 	if (session.getAttribute("user_id")==null || session.getAttribute("user_id")!=project.getTeamLead().getId()) {
+			Long userId = (Long) session.getAttribute("user_id");
+		 	if (userId==null || userId!=project.getTeamLead().getId()) {
 	    		return "redirect:/";
 	    	}
-		 	Long userId = (Long) session.getAttribute("user_id");
 			User user = userServ.findUserById(userId);
+			List<User> members = project.getUsers();
 			model.addAttribute("user", user);
 	        model.addAttribute("project", project);
+	        model.addAttribute("members", members);
 	        return "editproject.jsp";
 	    }
 	    

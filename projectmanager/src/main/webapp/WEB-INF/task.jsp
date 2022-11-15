@@ -15,6 +15,12 @@
 		<h1>Project: <c:out value="${project.title}"/></h1>
 		<h4><a href="/dashboard">Back to Dashboard</a></h4>
 		<h4>Project Lead: <c:out value="${project.teamLead.firstName}"/></h4>
+		<h4>Project Members:</h4>
+		<ul>
+			<c:forEach var="member" items="${project.users}">
+					<li><c:out value="${member.firstName}"/></li>
+			</c:forEach>
+		</ul>
 		<form:form action="/projects/${project.id}/tasks" method="post" modelAttribute="task">
 			<form:input type="hidden" path="project" value="${project.id}"/>
 			<form:input type="hidden" path="user" value="${user.id}"/>

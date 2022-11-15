@@ -14,7 +14,9 @@
 	<h1>Edit My Project</h1>
 	<form:form action="/projects/${project.id}" method="post" modelAttribute="project">
 	    <input type="hidden" name="_method" value="put">
-		<form:input type="hidden" path="teamLead" value="${user.id}"/>
+		<form:input type="hidden" path="teamLead"/>
+		<form:input type="hidden" path="users"/>
+		<form:input type="hidden" path="tasks"/>
 	    <p>
 	        <form:label path="title">Title</form:label>
 			<p class="error" style="color: red;"><form:errors path="title"/></p>
